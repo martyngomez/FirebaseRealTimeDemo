@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void createArtist(View view){
         Artist artist = new Artist(databaseReference.push().getKey(),"Garbage", "Rock"); //Obtiene key y pasa por parametro
+        // databaseReference.push().getKey() // Inserta un registro y devuelve Key . Funciona como in id Autoincremental
         databaseReference.child(ARTIST_NODE).child(artist.getId()).setValue(artist); // Establece valor
     }
 
